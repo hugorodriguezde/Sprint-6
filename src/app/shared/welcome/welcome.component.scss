@@ -1,0 +1,17 @@
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-image: url(../../../assets/img/background1.avif);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+img {
+  width: 30px;
+  height: 30px;
+}
