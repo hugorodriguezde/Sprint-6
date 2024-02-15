@@ -1,1 +1,30 @@
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-9">
+      <form [formGroup]="cardForm">
+        <div *ngFor="let service of services; let i = index">
+          <div class="card mt-5 shadow">
+            <div class="card-body d-flex align-items-center justify-content-between">
+              <div>
+                <h5 class="card-title">{{ service.name }}</h5>
+                <p class="card-text">{{ service.description }}</p>
+              </div>
+              <div class="text-center">
+                <h4 class="card-text"> <b>{{ service.price }} €</b></h4>
+              </div>
+              <div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label">Afegir</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="text-end">
+        <h3 class="mt-5">Preu pressupostat: X €</h3>
+      </div>
+    </div>
+  </div>
+</div>
