@@ -21,7 +21,6 @@
               </div>
               @if (service.id === 3 && formCheckbox.get('accept3')?.value){
               <div *ngIf="service.id === 3 && formCheckbox.get('accept3')?.value" class="panel-box">
-                <!-- TODO: lenguajes + paginas -->
                  <app-sub-menu (pagesPrice)="updateTotalPrice($event)" />
               </div>
             }

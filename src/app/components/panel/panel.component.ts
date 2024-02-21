@@ -18,6 +18,7 @@ export class PanelComponent implements OnInit {
   public formCheckbox!: FormGroup;
   public totalPrice = 0;
   public services: Services[] = [];
+  public webEvent: number = 0;
 
   constructor(
     private fb: FormBuilder,
@@ -37,9 +38,9 @@ export class PanelComponent implements OnInit {
     this.getTotalPrice();
 });
 }
-getTotalPrice() {
-
+getTotalPrice(event?:number ) {
   let totalPrice = 0;
+
 
   if (this.formCheckbox.get('accept1')?.value) {
     totalPrice += 300;
@@ -50,15 +51,19 @@ getTotalPrice() {
   if (this.formCheckbox.get('accept3')?.value) {
     totalPrice += 500;
   }
+  if (!this.formCheckbox.get('accept3')?.value) {
+    this.webEvent = 0;
+  }
 
-  this.totalPrice = totalPrice
+  this.totalPrice = totalPrice + this.webEvent;
+
 }
 
 updateTotalPrice(event: number): void {
 
-  this.totalPrice = this.formCheckbox.get('accept3')?.value ? 500 : 0;
+  this.webEvent = event;
+  this.getTotalPrice();
 
-  this.totalPrice += event;
 }
 
 isServiceSelected(serviceId: number): boolean {
