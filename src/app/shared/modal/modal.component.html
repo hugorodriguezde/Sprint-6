@@ -1,1 +1,13 @@
-<p>modal works!</p>
+<ng-template #content let-modal>
+	<div class="modal-header text-center ">
+		<h4 class="modal-title fw-bold">Numero de llenguatges</h4>
+	</div>
+	<div class="modal-body text-center">
+		<p>Afegeix els llenguatges que tindrà el teu projecte</p>
+    <p>El cost de cada llenguatge és de <b>30€</b>.</p>
+	</div>
+</ng-template>
+
+<button class="btn btn-outline-dark mb-2 me-2 rounded-circle" (click)="openModal(content)">
+i</button>
+

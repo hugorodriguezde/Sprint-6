@@ -1,0 +1,42 @@
+<main>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-9 mt-5">
+        <form [formGroup]="formCheckbox">
+          @for (service of services; track $index){
+          <div class="row mt-2">
+            <div class="cards col-12 shadow rounded-4 p-3 p-md-5 mt-3" [ngClass]="{ 'selected-card': isServiceSelected(service.id) }">
+              <div class="header-card d-flex justify-content-between align-items-center">
+                <div>
+                  <h3>{{ service.name }}</h3>
+                  <p>{{ service.description }}</p>
+                </div>
+                <div class="price-card">
+                  <span class="fs-3">{{ service.price }}<span class="fs-5">€</span></span>
+                </div>
+                <div class="checkbox-card d-flex gap-3">
+                  <input class="form-check-input" type="checkbox" [id]="'checkbox' + service.id" [formControlName]="'accept' + service.id">
+                  <label class="form-check-label" [for]="'checkbox' + service.id">Afegir</label>
+                </div>
+              </div>
+              @if (service.id === 3 && formCheckbox.get('accept3')?.value){
+              <div *ngIf="service.id === 3 && formCheckbox.get('accept3')?.value" class="panel-box">
+                <!-- TODO: lenguajes + paginas -->
+                 <app-sub-menu (pagesPrice)="updateTotalPrice($event)" />
+              </div>
+            }
+            </div>
+          </div>
+        }
+          <!-- PREU TOTAL -->
+          <div class="mt-4">
+            <p class="fs-4 d-flex justify-content-end gap-3">
+              <b>Preu pressuposat: </b>
+              <b>{{totalPrice}}€</b>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

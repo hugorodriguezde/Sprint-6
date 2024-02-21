@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { WelcomeComponent } from '../welcome/welcome.component';
 import { PanelComponent } from '../panel/panel.component';
-import { WelcomeComponent } from '../shared/welcome/welcome.component';
-import { BudgetsListComponent } from '../budgets-list/budgets-list.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PanelComponent, WelcomeComponent, BudgetsListComponent],
+  imports: [WelcomeComponent, PanelComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

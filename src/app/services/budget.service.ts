@@ -26,18 +26,24 @@ export class BudgetService {
       id: 3,
       name:"Web",
       description:"Programació d'una web responsive completa",
-      price:500,
-      selected: false
+      price: 500,
+      selected: false,
+      custom: {
+        pages: 0,
+        lenguages: 0
+      }
     }
   ];
 
-  constructor () { }
+  constructor() { }
 
+  calculatePagesPrice(numberPages: number, numberLanguages: number): number {
+    if (numberPages <= 0 || numberLanguages <= 0) return 0;
+    return numberPages * numberLanguages * 30;
+  }
   getServices(): Observable<Services[]> {
     return of(this.budgets);
   }
 }
-
-
 
 

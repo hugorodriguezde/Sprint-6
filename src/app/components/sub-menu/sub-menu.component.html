@@ -1,0 +1,24 @@
+<form [formGroup]="formPanel" autocomplete="off" (click)="calculate()">
+  <div class="row">
+    <div class="container-panel">
+      <div class="panel-pages d-flex gap-3 justify-content-end mt-3 align-items-center">
+        <app-modal />
+
+
+        <label class="form-panel-label" for="pages"><b>Nº de pàgines</b> </label>
+        <button type="button" class="btn rounded-circle border border-2 m-0 p-0" (click)="minusPages()">-</button>
+        <input class="form-panel-input" type="number" id="pages" formControlName="numberPages" (keydown.enter)="$event.preventDefault()">
+        <button type="button" class="btn rounded-circle border border-2 m-0 p-0" (click)="plusPages()">+</button>
+      </div>
+    </div>
+
+    <div class="panel-languages d-flex gap-3 justify-content-end align-items-center">
+        <app-modal />
+      <label class="form-panel-label" for="languages"><b>Nº de llenguatges</b></label>
+      <button type="button" class="btn rounded-circle border border-2 m-0 p-0" (click)="minusLanguages()">-</button>
+      <input class="form-panel-input" type="number" id="languages" formControlName="numberLanguages" (keydown.enter)="$event.preventDefault()" >
+      <button type="button" class="btn rounded-circle border border-2 m-0 p-0" (click)="plusLanguages()">+</button>
+    </div>
+  </div>
+
+</form>
