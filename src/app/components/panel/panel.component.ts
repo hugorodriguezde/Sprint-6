@@ -38,7 +38,7 @@ export class PanelComponent implements OnInit {
     this.getTotalPrice();
 });
 }
-getTotalPrice(event?:number ) {
+getTotalPrice( ) {
   let totalPrice = 0;
 
 

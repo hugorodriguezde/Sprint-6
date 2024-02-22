@@ -7,7 +7,6 @@ import { PanelComponent } from '../panel/panel.component';
   standalone: true,
   imports: [WelcomeComponent, PanelComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
