@@ -2,13 +2,14 @@ import { Component, OnInit, Output } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BudgetService } from '../../services/budget.service';
 import { EventEmitter } from '@angular/core';
-import { ModalOptions } from '../../shared/modal/modal.component';
+import { ModalLanguages } from '../../shared/modal/modal.component';
+import { ModalPagesComponent } from '../../shared/modal-pages/modal-pages.component';
 
 
 @Component({
   selector: 'app-sub-menu',
   standalone: true,
-  imports: [ReactiveFormsModule, ModalOptions],
+  imports: [ReactiveFormsModule, ModalLanguages, ModalPagesComponent],
   templateUrl: './sub-menu.component.html',
   styleUrl: './sub-menu.component.scss'
 })

@@ -1,18 +1,18 @@
+import { Component, TemplateRef, inject } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Component, inject, TemplateRef} from '@angular/core';
 
 @Component({
-  selector: 'app-modal-languages',
+  selector: 'app-modal-pages',
   standalone: true,
   imports: [],
-  templateUrl: './modal.component.html',
-  styleUrl: './modal.component.scss'
+  templateUrl: './modal-pages.component.html',
+  styleUrl: './modal-pages.component.scss'
 })
-export class ModalLanguages {
+export class ModalPagesComponent {
+
   private modalService = inject(NgbModal);
 
 	openModal(content: TemplateRef<any>) {
 		this.modalService.open(content, { centered: true });
 	}
 }
-
